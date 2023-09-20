@@ -31,13 +31,13 @@ categories:
 
 #### UML类图
 
-![工厂方法模式](https://cdn.jsdelivr.net/gh/caitui/caitui.github.io/blog-image/img_0e56c508a9cef14b13ef9519e685b28f-20230919164915313.jpeg)
+![Image](https://raw.githubusercontent.com/caitui/caitui.github.io/main/blog-image/640-20230920105700353.jpeg)
 
 ### K8S调度器如何使用工厂模式
 
 ​	k8s的Framework是kubernetes扩展的第二种实现，主要是围绕着预选和优选阶段进行扩展，提供了更多的扩展点，其中每个扩展点都是一类插件，我们可以根据我们的需要在对应的阶段来进行扩展插件的编写，实现调度增强。主要的扩展点如下图所示：
 
-![preview](https://cdn.jsdelivr.net/gh/caitui/caitui.github.io/blog-image/view.png)
+![暂无图片](https://raw.githubusercontent.com/caitui/caitui.github.io/main/blog-image/modb_20230417_e380aea8-dcc3-11ed-b19d-38f9d3cd240d-20230920110141362-20230920110144861.jpeg)
 
 ​	插件思想可以通过工厂模式来实现，一个插件暴露出来的是一个工厂函数，由调用者或者插件架构来将提供配置信息传入，生成插件实例。k8s的调度器代码是通过插件工厂来存储所有注册的插件工厂，然后通过插件工厂构建具体的插件。
 
